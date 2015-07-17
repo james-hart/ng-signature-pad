@@ -1,7 +1,8 @@
 /**!
  * AngularJS SignaturePad directive
  * @author Javier Martínez <ecentinela@gmail.com>
- * @version 0.1.0
+ * @version 0.1.1
+ * Updated by James Wagoner
  */
 
 /* global angular */
@@ -35,6 +36,10 @@
                 $attrs.$set('ngSignaturePadMinWidth', null);
               }
 
+              if (!$attrs.ngSignaturePadMaxWidth) {
+                $attrs.$set('ngSignaturePadMaxWidth', null);
+              }
+
               if (!$attrs.ngSignaturePadBackgroundColor) {
                 $attrs.$set('ngSignaturePadBackgroundColor', null);
               }
@@ -58,6 +63,7 @@
               $scope.ngSignaturePad = new $window.SignaturePad($element[0], {
                 dotSize: $attrs.ngSignaturePadDotSize,
                 minWidth: $attrs.ngSignaturePadMinWidth,
+                maxWidth: $attrs.ngSignaturePadMaxWidth,
                 backgroundColor: $attrs.ngSignaturePadBackgroundColor,
                 penColor: $attrs.ngSignaturePadPenColor,
                 velocityFilterWeight: $attrs.ngSignaturePadVelocityFilterWeight,
